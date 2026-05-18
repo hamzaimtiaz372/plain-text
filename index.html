@@ -12,6 +12,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -22,28 +23,31 @@ color:#333;
 /* Header */
 
 header{
-background:#0d6efd;
+background:linear-gradient(135deg,#0d6efd,#4ea3ff);
 color:white;
 text-align:center;
-padding:50px 20px;
+padding:70px 20px;
 }
 
 header h1{
-font-size:42px;
+font-size:50px;
 margin-bottom:10px;
 }
 
 header p{
-font-size:18px;
+font-size:20px;
+margin-top:10px;
 }
 
 /* Navigation */
 
 nav{
 background:white;
-padding:15px;
+padding:18px;
 text-align:center;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
 }
 
 nav a{
@@ -51,7 +55,8 @@ color:#0d6efd;
 text-decoration:none;
 margin:0 20px;
 font-weight:bold;
-font-size:16px;
+font-size:17px;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -61,40 +66,76 @@ color:#084298;
 /* Sections */
 
 section{
-width:80%;
+width:85%;
 margin:40px auto;
 background:white;
 padding:40px;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+section:hover{
+transform:translateY(-5px);
 }
 
 section h2{
 color:#0d6efd;
 margin-bottom:20px;
 text-align:center;
+font-size:32px;
 }
 
 section p{
 text-align:center;
 line-height:1.8;
-font-size:17px;
+font-size:18px;
 }
 
 /* Skills */
 
 .skills{
 text-align:center;
+margin-top:20px;
 }
 
 .skills span{
 display:inline-block;
 background:#0d6efd;
 color:white;
-padding:10px 20px;
+padding:12px 22px;
 margin:10px;
 border-radius:30px;
 font-weight:bold;
+transition:0.3s;
+}
+
+.skills span:hover{
+background:#084298;
+transform:scale(1.05);
+}
+
+/* Projects */
+
+.project-box{
+background:#eef5ff;
+padding:20px;
+margin-top:20px;
+border-left:5px solid #0d6efd;
+border-radius:10px;
+}
+
+.project-box h3{
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+/* Contact */
+
+.contact-info{
+text-align:center;
+font-size:18px;
+line-height:2;
 }
 
 /* Footer */
@@ -103,8 +144,28 @@ footer{
 background:#0d6efd;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 margin-top:40px;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+header h1{
+font-size:38px;
+}
+
+nav a{
+display:block;
+margin:12px 0;
+}
+
+section{
+width:92%;
+padding:25px;
+}
+
 }
 
 </style>
@@ -114,10 +175,10 @@ margin-top:40px;
 
 <!-- Header -->
 
-<header>
+<header id="home">
 <h1>Hamza Imtiaz</h1>
 <p>Student | HTML Learner | Future Web Developer</p>
-<p>Student ID: 2417305</p>
+<p><strong>Student ID:</strong> 2417305</p>
 </header>
 
 <!-- Navigation -->
@@ -126,59 +187,91 @@ margin-top:40px;
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- Home -->
+<!-- Home Section -->
 
-<section id="home">
-<h2>Home Page</h2>
+<section>
+<h2>Welcome</h2>
 <p>
-Welcome to my portfolio website.
-I am a student learning web development and technology.
+Welcome to my personal portfolio website.
+I am a student at Kyungdong University, South Korea,
+learning web development and modern technologies.
+This website shows my skills, projects, and contact information.
 </p>
 </section>
 
-<!-- About -->
+<!-- About Section -->
 
 <section id="about">
 <h2>About Me</h2>
 <p>
 My name is Hamza Imtiaz.
-I am a student interested in programming,
-website development, and cloud technology.
-I am currently learning HTML and improving my coding skills.
+I am currently studying at Kyungdong University in South Korea.
+I am passionate about programming, website development,
+and cloud technology.
+I am continuously improving my coding and design skills
+to become a professional web developer.
 </p>
 </section>
 
-<!-- Skills -->
+<!-- Skills Section -->
 
 <section id="skills">
 <h2>My Skills</h2>
 
 <div class="skills">
 <span>HTML</span>
-<span>Student</span>
+<span>CSS</span>
 <span>Basic Web Design</span>
-<span>Learning Programming</span>
+<span>Programming Learner</span>
+<span>Cloud Technology</span>
+<span>Responsive Design</span>
 </div>
+
 </section>
 
-<!-- Contact -->
+<!-- Projects Section -->
+
+<section id="projects">
+<h2>My Projects</h2>
+
+<div class="project-box">
+<h3>Portfolio Website</h3>
+<p>
+Created a responsive portfolio website using HTML and CSS.
+</p>
+</div>
+
+<div class="project-box">
+<h3>Learning Web Development</h3>
+<p>
+Practicing frontend development and responsive website design.
+</p>
+</div>
+
+</section>
+
+<!-- Contact Section -->
 
 <section id="contact">
 <h2>Contact Me</h2>
 
-<p>Email: imtiazhamza822@gmail.com</p>
-<p>Phone: 01072126223</p>
+<div class="contact-info">
+<p><strong>Email:</strong> imtiazhamza822@gmail.com</p>
+<p><strong>Phone:</strong> 01072126223</p>
+<p><strong>Location:</strong> South Korea</p>
+</div>
+
 </section>
 
 <!-- Footer -->
 
 <footer>
-<p>© 2026 Hamza Imtiaz | Portfolio Website</p>
+<p>© 2026 Hamza Imtiaz | All Rights Reserved</p>
 </footer>
 
 </body>
 </html>
-```
